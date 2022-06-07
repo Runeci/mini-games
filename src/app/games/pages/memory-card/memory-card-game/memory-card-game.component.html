@@ -1,0 +1,28 @@
+<div class="container">
+    <ul class="cells">
+        <li class="card"
+            [ngClass]="{ flip: card.flipped, shake: card.shake}"
+            *ngFor="let card of cards; let i = index"
+            (click)="flipCard($event, i); selectedCard = i"
+            #card>
+            <div class="view front-view" [id]="card.index">
+                <mat-icon>question_mark</mat-icon>
+            </div>
+            <div class="view back-view">
+                <span>{{card.emoji}}</span>
+            </div>
+        </li>
+    </ul>
+    <div class="moves">
+        <p>Moves: <span>{{ totalMoves }}</span></p>
+    </div>
+    <button mat-flat-button
+            color="accent"
+            *ngIf="allowRestart"
+            (click)="onRestart()"
+    >Restart</button>
+</div>
+
+
+
+

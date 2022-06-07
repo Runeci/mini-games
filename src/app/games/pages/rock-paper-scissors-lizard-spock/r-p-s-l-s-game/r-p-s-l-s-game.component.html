@@ -1,0 +1,40 @@
+<div class="score-container">
+    <div class="score">
+        <p> {{ playerScore }} - {{ computerScore }}</p>
+    </div>
+</div>
+
+<div class="game-items-container">
+    <div class="game-items" #gameItems
+         (click)="moveContainer()"
+    >
+        <div class="game-item" #gameItem
+             *ngFor="let game of gamePlayItems"
+             [@moveToCenter]="{
+                value: this.selectedElement === game.name && moveAnimState,
+                params: { transform: showAnimLeftPos }
+             }"
+             [ngClass]="{
+                selected: this.selectedElement === game.name,
+                hide: !firstLoad && this.selectedElement !== game.name,
+                show: firstLoad
+                }"
+             (click)="selectGameItem(game.name)"
+        >
+            <img class="game-item-image" src="assets/images/{{ game.name }}.svg" [alt]="game.name">
+        </div>
+    </div>
+</div>
+
+<div class="computer-item-container" *ngIf="selectedElement">
+    <div class="computer-item">
+        <img class="computer-item-image" src="assets/images/{{computerSelectedItem}}.svg"
+             [alt]="computerSelectedItem">
+    </div>
+</div>
+
+<div class="result-container" *ngIf="showResult">
+    <div class="result">{{ winnerResult | uppercase }}</div>
+    <button mat-flat-button (click)="restartGame()" color="accent">Restart</button>
+</div>
+

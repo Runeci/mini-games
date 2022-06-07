@@ -1,0 +1,53 @@
+.bg {
+    background-image: url("../../../../assets/images/homeBg.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.logo-text {
+    min-width: 400px;
+}
+
+.text-line {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: dash 5s linear forwards, filling 5s ease-in forwards;
+    font-size: 70px;
+}
+
+.text-line text {
+    font-family: Helvetica,Arial,sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes filling {
+    0%, 90% { fill: #212121; fill-opacity: 0; }
+    100% { fill: #212121; fill-opacity: 1; }
+}
+
+@media (max-width: 420px) {
+    .text-line {
+        font-size: 55px;
+    }
+
+    .logo-text {
+        max-width: 300px;
+        min-width: 200px;
+    }
+}

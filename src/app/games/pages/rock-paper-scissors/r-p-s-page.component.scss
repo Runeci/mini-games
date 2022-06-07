@@ -1,0 +1,24 @@
+h2 {
+    text-align: center;
+    color: rgba(123,199,200,255);
+    text-transform: uppercase;
+}
+
+.exit-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.container {
+    position: relative;
+    height: 100%;
+}
+
+::ng-deep .mat-ink-bar {
+    background-color: #212121 !important;
+}
+
+::ng-deep .mat-tab-label .mat-tab-label-content {
+    color: #212121;
+}

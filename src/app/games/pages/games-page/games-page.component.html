@@ -1,0 +1,11 @@
+<div class="container bg">
+    <div class="cards-container">
+        <mat-card *ngFor="let game of games">
+            <mat-card-title class="title">{{ game.name }}</mat-card-title>
+            <mat-card-actions>
+                <button mat-flat-button (click)="goToGame(game.path)">PLAY</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+<router-outlet name="game"></router-outlet>

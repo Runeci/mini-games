@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>Rock, paper, scissors, lizard, spock</h2>
+    <mat-divider></mat-divider>
+    <mat-tab-group mat-align-tabs="center"
+                   animationDuration="0ms"
+                   [selectedIndex]="selectedTab"
+                   (selectedTabChange)="tabChanged($event)"
+    >
+        <mat-tab label="Rules">
+            <app-r-p-s-l-s-rules></app-r-p-s-l-s-rules>
+        </mat-tab>
+        <mat-tab label="Game">
+            <app-r-p-s-l-s-game [gameTabInactive$]="gameTabInactive$"></app-r-p-s-l-s-game>
+        </mat-tab>
+    </mat-tab-group>
+
+    <mat-dialog-actions align="end" class="exit-btn">
+        <button mat-button mat-dialog-close>Exit</button>
+    </mat-dialog-actions>
+
+</div>
